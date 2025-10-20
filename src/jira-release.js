@@ -13,9 +13,9 @@ async function run() {
       .post('rest/api/3/version', {
         json: {
           name: jiraVersionName,
-          projectId: parseInt(core.getInput('project_id')),
+          projectId: core.getInput('project_id'),
           description: name,
-          released: core.getInput('released') === 'true',
+          released: core.getInput('released'),
         },
       })
       .json()
